@@ -35,9 +35,6 @@ const Login = ({ login, isAuthenticated }) => {
 					<title>Real Estate - Login</title>
 					<meta name='description' content='login page' />
 				</Helmet>
-				<h1 className='text-center font-weight-bolder brand-heading title-heading py-3'>
-					Login Here
-				</h1>
 				<form onSubmit={(e) => onSubmit(e)}>
 					<div className='form-group px-3'>
 						<input
@@ -62,28 +59,19 @@ const Login = ({ login, isAuthenticated }) => {
 						<button
 							type='submit'
 							className='btn btn-primary my-2 py-2 px-5 font-weight-bolder'
+							style={{background:'red', border: 'none'}}
 						>
 							SIGN IN
 						</button>
 					</div>
 
-					<div className='row d-flex justify-content-center align-items-center my-4'>
-						<div className='col-md-6 col-12 d-flex justify-content-center'></div>
-						<div className='col-md-6 col-12 d-flex justify-content-end'>
+
+					<div className='my-3'>
 							<h5>
-								Don't have an account?{" "}
-								<Link to='/signup' variant='body2'>
-									Sign Up
-								</Link>
+								Don't have an account? Sign Up
 							</h5>
 						</div>
-					</div>
 				</form>
-				<div className='my-5'>
-					<h5 className='text-center pt-5'>
-						Copyright &copy; Rajan Gautam, 2021 | All Right Reserved
-					</h5>
-				</div>
 			</div>
 		</>
 	);
