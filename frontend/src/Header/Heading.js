@@ -7,9 +7,9 @@ const Heading = () => {
 		<>
 			<div className='heading'>
 				<h1 className='text-center font-weight-bolder brand-heading'>
-					{/* <Link exact to='/'>
+					<Link exact to='/'>
 						Welcome to UBSCITY
-					</Link> */}
+					</Link>
 				</h1>
 			</div>
 			<Alert />
