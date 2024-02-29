@@ -12,11 +12,13 @@ import Profile from "../containers/Profile";
 import NotFound from "../containers/NotFound";
 import Brought from "../containers/Brought";
 import Landing from "../containers/Landing";
+import FirstPage from "../containers/FirstPage";
 
 const Routes = () => {
     return (
         <>
             <Switch>
+                <Route exact path="/firstpage" component={FirstPage} />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/land" component={Landing} />
                 <Route exact path="/about" component={About} />
