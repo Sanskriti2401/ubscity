@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ListingForm from "../components/ListingForm";
 import ListingHome from "../components/ListingHome";
 import { Helmet } from "react-helmet";
+import Listing from "./Listing";
 
 const Home = () => {
     const [listings, setListings] = useState([]);
@@ -18,6 +19,7 @@ const Home = () => {
             <section>
                 <ListingHome listings={listings} />
             </section>
+            <Listing />
         </>
     );
 };

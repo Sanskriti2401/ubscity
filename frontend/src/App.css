@@ -378,3 +378,64 @@ body {
     background-color: #000000;
   }
   
+  .page-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+    background-size: cover;
+    z-index: -1;
+  }
+  
+  .content-box {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  .tabs {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    backdrop-filter: blur(5px) brightness(0.8);
+  }
+  
+  .tab {
+    flex-grow: 1;
+    text-align: center;
+    padding: 5px 0;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    width: 210px;
+    margin-inline: 10px;
+  }
+  
+  .tab:hover {
+    background-color: lightgray;
+  }
+  
+  .tab.active {
+    background-color: #FF8488;
+  }
+  
+  .tab-content {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px) brightness(0.8);
+  }

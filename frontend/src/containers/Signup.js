@@ -40,9 +40,6 @@ const Signup = ({ setAlert, isAuthenticated, signup }) => {
 				<title>Real Estate - Signup</title>
 				<meta name='description' content='sign up page' />
 			</Helmet>
-			<h1 className='text-center font-weight-bolder brand-heading title-heading py-3'>
-				Create Your Account Here
-			</h1>
 			<form className='mt-3 px-3' onSubmit={(e) => onSubmit(e)}>
 				<div className='form-group mt-2'>
 					<input
@@ -90,15 +87,13 @@ const Signup = ({ setAlert, isAuthenticated, signup }) => {
 					<button
 						type='submit'
 						className='btn btn-primary my-2 py-2 px-5 font-weight-bolder'
+						style={{background:'red', border: 'none'}}
 					>
 						SIGN UP
 					</button>
 					<div className='my-3'>
 						<h5>
-							Already have an Account?{" "}
-							<Link to='/login' variant='body2'>
-								Login
-							</Link>
+							Already have an Account? Login
 						</h5>
 					</div>
 				</div>
