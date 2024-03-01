@@ -37,7 +37,7 @@ const Signup = ({ setAlert, isAuthenticated, signup }) => {
 	return (
 		<div className='container'>
 			<Helmet>
-				<title>Real Estate - Signup</title>
+				<title>UBSCity- Signup</title>
 				<meta name='description' content='sign up page' />
 			</Helmet>
 			<form className='mt-3 px-3' onSubmit={(e) => onSubmit(e)}>
