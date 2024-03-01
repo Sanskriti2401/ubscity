@@ -81,7 +81,7 @@ const Brought = ({ match, isAuthenticated, email }) => {
     return (
         <>
             <Helmet>
-                <title>Real Estate - {`${listing.title}`}</title>
+                <title>UBSCity - {`${listing.title}`}</title>
                 <meta name="description" content="Listing detail" />
             </Helmet>
             {email === buyer ? (

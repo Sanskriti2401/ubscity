@@ -4,6 +4,8 @@ import { CircleMenu, CircleMenuItem } from "react-circular-menu";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
+import { Home, ContactMail, ListAlt, Info } from "@material-ui/icons";
+
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../store/actions/auth";
@@ -42,8 +44,42 @@ const NavRight = ({ auth: { isAuthenticated, loading }, logout }) => {
 				menuToggleClassName='toggle-menu'
 				rotationAngleInclusive={false}
 			>
-				{!loading && isAuthenticated ? authLinks : guestLinks}
 				<CircleMenuItem
+					onClick={() => {}}
+					tooltip='Home'
+					tooltipPlacement='right'
+					className='menu-item'
+				>
+					<Button>
+						<Link exact to='/land'>
+							<Home color='primary' fontSize='large' />
+						</Link>
+					</Button>
+				</CircleMenuItem>
+				<CircleMenuItem
+					tooltip='Listing'
+					className='menu-item'
+					tooltipPlacement='right'
+				>
+					<Button>
+						<Link exact to='/listing'>
+							<ListAlt color='primary' fontSize='large' />
+						</Link>
+					</Button>
+				</CircleMenuItem>
+				<CircleMenuItem
+					tooltip='Add Property'
+					className='menu-item'
+					tooltipPlacement='right-end'
+				>
+					<Button>
+						<Link exact to='/contact'>
+							<Info color='primary' fontSize='large' />
+						</Link>
+					</Button>
+				</CircleMenuItem>
+				
+				{/* <CircleMenuItem
 					tooltip='Profile'
 					tooltipPlacement='left'
 					className='menu-item'
@@ -53,7 +89,7 @@ const NavRight = ({ auth: { isAuthenticated, loading }, logout }) => {
 							<AccountCircle color='secondary' fontSize='large' />
 						</Link>
 					</Button>
-				</CircleMenuItem>
+				</CircleMenuItem> */}
 			</CircleMenu>
 		</div>
 	);

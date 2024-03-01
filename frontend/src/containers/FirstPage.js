@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Login from './Login';
 import Signup from './Signup';
+import logo from "../images/logo.jpeg";
+
 
 const FirstPage = () => {
     const [activeTab, setActiveTab] = useState("login");
@@ -11,12 +13,12 @@ const FirstPage = () => {
 
   return (
     <div class="header">
-        <img src="https://www.ubs.com/etc/designs/fit/img/UBS_Logo_Semibold.svg" style= {{ paddingBlock: "12px" }}/>
+    <img src={logo} style= {{ width:'210px',padding:'10px'}}/>    
     <div className="page-container">
         
       <div className="background-blur"></div>
       <div className="content-box">
-        <div className="tabs">
+        <div className="tabss">
       <button className={`tab ${activeTab === "login" ? "active" : ""}`} onClick={() => toggleTab("login")}>
         Login
       </button>

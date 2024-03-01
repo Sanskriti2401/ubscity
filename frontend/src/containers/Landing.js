@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from 'react-router-dom';
 import NavRight from "../Header/NavRight";
 import NavLeft from "../Header/NavLeft";
+import logo from "../images/logo.jpeg";
 
 
 
@@ -13,7 +14,7 @@ const Landing = () =>{
   };
 
   const handleExplore = () => {
-    history.push('/listing');
+    history.push('/contact');
     
   };
 
@@ -21,7 +22,8 @@ const Landing = () =>{
     return (
         <>
         <NavRight />
-        
+        <img src={logo} style= {{ width:'210px',padding:'10px'}}/>
+
         <div className="page-container">
           <div className="background-blur"></div>
             <div className="content-box">
