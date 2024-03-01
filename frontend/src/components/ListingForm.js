@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 import PropTypes from "prop-types";
+import { useHistory } from 'react-router-dom';
 
 const ListingForm = (props) => {
+    
     const [formData, setFormData] = useState({
         sale_type: "For Sale",
         price: "$0+",
@@ -30,6 +32,8 @@ const ListingForm = (props) => {
     const open_house = "true";
 
     const [loading, setLoading] = useState(false);
+
+  
 
     const onChange = (e) =>
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -104,6 +108,13 @@ const ListingForm = (props) => {
             });
     }, []);
 
+    const history = useHistory();
+
+    const handleExplore = () => {
+        history.push('/listing');
+        
+      };
+
     return (
         <div className="container">
             <form className="px-1" onSubmit={(e) => onSubmit(e)}>
@@ -154,10 +165,10 @@ const ListingForm = (props) => {
                             onChange={(e) => onChange(e)}
                             value={price}
                         >
-                            <option>$0+</option>
-                            <option>$200,000+</option>
-                            <option>$400,000+</option>
-                            <option>$600,000+</option>
+                            <option>Rs.0+</option>
+                            <option>Rs.10,000+</option>
+                            <option>Rs.20,000+</option>
+                            <option>$30,000+</option>
                             <option>$800,000+</option>
                             <option>$1,000,000+</option>
                             <option>$1,200,000+</option>
@@ -298,7 +309,8 @@ const ListingForm = (props) => {
                             </div>
                         ) : (
                             <div className="form-group d-flex justify-content-center">
-                                <button className="btn btn-primary py-2 px-4 mt-4">
+                                <button className="btn btn-primary py-2 px-4 mt-4 my-button" onClick={handleExplore}
+                                style={{ backgroundColor: 'red', color: 'white', border: 'red,' }}>
                                     Search
                                 </button>
                             </div>

@@ -4,6 +4,8 @@ import Card from "../components/Card";
 import { Helmet } from "react-helmet";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import NavRight from "../Header/NavRight";
+import logo from "../images/logo.jpeg";
 
 const responsive = {
     superLargeDesktop: {
@@ -23,6 +25,17 @@ const responsive = {
         items: 1,
     },
 };
+const Divider = ({ children }) => {
+    return (
+      <div className="container">
+        <div className="border" />
+        <span className="contented">
+          {children}
+        </span>
+        <div className="border" />
+      </div>
+    );
+  };
 
 const Listing = () => {
     const [listings, setListings] = useState([]);
@@ -41,11 +54,15 @@ const Listing = () => {
     return (
         <>
             <Helmet>
-                <title>Real Estate - Listing</title>
+                <title>UBSCity - Listing</title>
                 <meta name="description" content="sign up page" />
             </Helmet>
+            <NavRight />
+            <img src={logo} style= {{ width:'210px',padding:'10px'}}/>
             <div className="heading-component">
-                <h1 className="text-center">Listings</h1>
+            <h1>
+            <Divider style= {{ color: "red"}} >Featured Properties</Divider>
+            </h1>
             </div>
             <div className="container">
                 <Carousel

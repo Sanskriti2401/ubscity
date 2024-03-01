@@ -5,8 +5,16 @@ import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { login } from "../store/actions/auth";
+import { useHistory } from 'react-router-dom';
+
 
 const Login = ({ login, isAuthenticated }) => {
+
+	const history = useHistory();
+	const handleExplore = () => {
+		history.push('/land');
+		
+	  };
 	const [formData, setFormData] = useState({
 		email: "",
 		password: "",
@@ -27,12 +35,14 @@ const Login = ({ login, isAuthenticated }) => {
 	};
 
 	if (isAuthenticated) return <Redirect to='/' />;
+	
+	
 
 	return (
 		<>
 			<div className='container'>
 				<Helmet>
-					<title>Real Estate - Login</title>
+					<title>UBSCity - Login</title>
 					<meta name='description' content='login page' />
 				</Helmet>
 				<form onSubmit={(e) => onSubmit(e)}>
@@ -58,8 +68,8 @@ const Login = ({ login, isAuthenticated }) => {
 						/>
 						<button
 							type='submit'
-							className='btn btn-primary my-2 py-2 px-5 font-weight-bolder'
-							style={{background:'red', border: 'none'}}
+							className='btn btn-primary my-2 py-2 px-5 font-weight-bolder' onClick={handleExplore}
+							style={{background:'red', border: 'none'} }
 						>
 							SIGN IN
 						</button>
